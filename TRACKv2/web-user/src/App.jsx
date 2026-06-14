@@ -4,6 +4,7 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import RequestAccountCodePage from "./pages/RequestAccountCodePage";
 import CreateEventPage from "./pages/CreateEventPage";
+import CreateTaskPage from "./pages/CreateTaskPage";
 import HomePage from "./pages/HomePage";
 import AuthProvider from "./context/AuthContext";
 
@@ -20,6 +21,7 @@ export default function App() {
           />
           <Route path="/" element={<HomePage />} />
           <Route path="/create-event" element={<CreateEventPage />} />
+          <Route path="/create-task" element={<CreateTaskPage />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

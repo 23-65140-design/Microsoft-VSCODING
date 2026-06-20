@@ -139,7 +139,7 @@ export default function CreateTaskForm() {
               />
             </div>
             <div className={styles.scheduleSection}>
-              <div className={styles.scheduleLabel}>
+              <div className={styles.sectionLabel}>
                 <AlarmOffIcon />
                 <label className={styles.label}>End Time</label>
               </div>

@@ -1,7 +1,6 @@
 @import '../../../App.css';
 
 .form {
-  background: var(--page-background-color);
   padding-bottom: 5rem;
 }
 
@@ -31,10 +30,8 @@
   box-shadow: 0 0 0 2px var(--primary-color);
 }
 .section {
-  background: var(--background-color);
   border-radius: 12px;
   padding: 1rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   gap: 1rem;
   display: flex;
   flex-direction: column;
@@ -46,6 +43,8 @@
   color: var(--fifth-color);
   margin-bottom: 0.25rem;
 }
+
+
 
 .row {
   display: flex;

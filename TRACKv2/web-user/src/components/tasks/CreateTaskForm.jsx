@@ -2,6 +2,13 @@ import React, { useState } from "react";
 import styles from "../../styles/components/tasks/CreateTaskForm.module.css";
 import RadioGroup from "../common/RadioGroup";
 import TaskColor from "../tasks/TaskColor";
+import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import AlarmOffIcon from "@mui/icons-material/AlarmOff";
+import LabelOutlinedIcon from '@mui/icons-material/LabelOutlined';
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
+import PersonAddOutlinedIcon from '@mui/icons-material/PersonAddOutlined';
+
 
 export default function CreateTaskForm() {
   const [title, setTitle] = useState("");
@@ -15,13 +22,6 @@ export default function CreateTaskForm() {
   const [collaborators, setCollaborators] = useState([]);
   const [assignees, setAssignees] = useState([]);
   const [description, setDescription] = useState("");
-
-  const colorOptions = [
-    { value: "blue", label: "Blue" },
-    { value: "red", label: "Red" },
-    { value: "green", label: "Green" },
-    { value: "yellow", label: "Yellow" },
-  ];
 
   const priorityOptions = [
     { value: "high", label: "High" },
@@ -66,11 +66,15 @@ export default function CreateTaskForm() {
           </div>
 
           <div className={styles.col}>
-            <div className={styles.label}>Label</div>
+            <div className={styles.sectionLabel}>
+              <LabelOutlinedIcon />
+              <label className={styles.label}>Label</label>
+            </div>
+
             <RadioGroup
-            className={styles.labelGroup}
-            optionsClassName={styles.labelOptions}
-            radioLabelClassName={styles.labelRadio}
+              className={styles.labelGroup}
+              optionsClassName={styles.labelOptions}
+              radioLabelClassName={styles.labelRadio}
               name="label"
               options={priorityOptions}
               value={priority}
@@ -79,7 +83,10 @@ export default function CreateTaskForm() {
           </div>
 
           <div className={styles.col}>
-            <div className={styles.label}>Visibility</div>
+            <div className={styles.sectionLabel}>
+              <VisibilityOutlinedIcon />
+              <label className={styles.label}>Visibility</label>
+            </div>
             <RadioGroup
               name="visibility"
               optionsClassName={styles.visibilityOptions}
@@ -92,18 +99,25 @@ export default function CreateTaskForm() {
           </div>
           <div className={styles.row}>
             <div className={styles.scheduleSection}>
-              <label className={styles.label}>Start Date</label>
+              <div className={styles.sectionLabel}>
+                <CalendarTodayIcon />
+                <label className={styles.label}>Start Date</label>
+              </div>
+
               <input
-                className={styles.dateInput}
+                className={styles.scheduleInput}
                 type="date"
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
               />
             </div>
             <div className={styles.scheduleSection}>
-              <label className={styles.label}>End Date</label>
+              <div className={styles.sectionLabel}>
+                <CalendarTodayIcon />
+                <label className={styles.label}>End Date</label>
+              </div>
               <input
-                className={styles.dateInput}
+                className={styles.scheduleInput}
                 type="date"
                 value={endDate}
                 onChange={(e) => setEndDate(e.target.value)}
@@ -113,18 +127,24 @@ export default function CreateTaskForm() {
 
           <div className={styles.row}>
             <div className={styles.scheduleSection}>
-              <label className={styles.label}>Start Time</label>
+              <div className={styles.sectionLabel}>
+                <AccessTimeIcon />
+                <label className={styles.label}>Start Time</label>
+              </div>
               <input
-                className={styles.timeInput}
+                className={styles.scheduleInput}
                 type="time"
                 value={startTime}
                 onChange={(e) => setStartTime(e.target.value)}
               />
             </div>
             <div className={styles.scheduleSection}>
-              <label className={styles.label}>End Time</label>
+              <div className={styles.scheduleLabel}>
+                <AlarmOffIcon />
+                <label className={styles.label}>End Time</label>
+              </div>
               <input
-                className={styles.timeInput}
+                className={styles.scheduleInput}
                 type="time"
                 value={endTime}
                 onChange={(e) => setEndTime(e.target.value)}
@@ -134,7 +154,10 @@ export default function CreateTaskForm() {
 
           <div className={styles.col}>
             <div className={styles.col}>
-              <label className={styles.label}>Collaborators</label>
+              <div className={styles.sectionLabel}>
+                <PersonAddOutlinedIcon />
+                 <label className={styles.label}>Collaborators</label>
+              </div>
               <div>
                 <button
                   type="button"
@@ -150,7 +173,10 @@ export default function CreateTaskForm() {
             </div>
 
             <div className={styles.col}>
-              <label className={styles.label}>Assignees</label>
+              <div className={styles.sectionLabel}>
+                <PersonAddOutlinedIcon />
+                <label className={styles.label}>Assignees</label>
+              </div>
               <div>
                 <button
                   type="button"

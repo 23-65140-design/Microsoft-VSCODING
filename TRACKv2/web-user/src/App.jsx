@@ -7,6 +7,8 @@ import CreateEventPage from "./pages/CreateEventPage";
 import CreateTaskPage from "./pages/CreateTaskPage";
 import HomePage from "./pages/HomePage";
 import AuthProvider from "./context/AuthContext";
+import Tasks from "./pages/Tasks";
+import Analytics from "./pages/Analytics";
 
 export default function App() {
   return (
@@ -20,8 +22,10 @@ export default function App() {
             element={<RequestAccountCodePage />}
           />
           <Route path="/" element={<HomePage />} />
+          <Route path="/tasks" element={<Tasks />} />
           <Route path="/create-event" element={<CreateEventPage />} />
           <Route path="/create-task" element={<CreateTaskPage />} />
+          <Route path="/analytics" element={<Analytics/>}/>
         </Routes>
       </BrowserRouter>
     </AuthProvider>
